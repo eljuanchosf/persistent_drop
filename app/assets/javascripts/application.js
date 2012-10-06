@@ -17,21 +17,27 @@
 
 
 $(function() {
+    // Append the draggable widget to all the img objects
     $("img").draggable({
+        // Capture the "stop drag" event
         stop: function(event, ui) {
 
+            // Generate the img object with the new coordinates.
             var img = {
                 "id": $(this).attr('id'),
                 "position_y": $(this).position().top.toString(),
                 "position_x": $(this).position().left.toString()
             };
 
+            // Send the request to the server
             $.ajax({
                 type: "PUT",
                 url: "/images/" + $(this).attr('id') + ".json",
                 data: JSON.stringify( img ),
                 contentType: 'application/json',
                 dataType: 'json',
+
+                // In case that an error happens, capture it and show the details.
                 error: function(xhr, msg, error) {
                     alert(msg + ": " + error);
                 }
