@@ -4,7 +4,6 @@ Simple example about how to work with jQuery UI draggable and ajax in the contex
 
 == Getting Started
 
-
 Clone the repo in your local instance and run:
 
   rake db:migrate
