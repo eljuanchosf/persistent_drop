@@ -1,0 +1,11 @@
+<% @images.each do |image| %>
+
+    <% if image.position_x.nil? or image.position_y.nil? %>
+        <%= image_tag(image.file_name, :alt => image.alt, :title => image.title, :id => image.id) %>
+    <% else %>
+        <%= image_tag(image.file_name, :alt => image.alt,
+                                       :title => image.title,
+                                       :id => image.id,
+                                       :style => "position:absolute; top:#{image.position_y}px; left:#{image.position_x}px;") %>
+    <% end %>
+<% end %>
