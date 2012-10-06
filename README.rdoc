@@ -11,3 +11,5 @@ Clone the repo in your local instance and run:
 
 And play with the images.
 Then refresh the page completely and you'll see the images in the last place you left them.
+
+Here's the {blog post}[http://www.jpgenovese.com/2012/10/06/ruby-on-rails-and-jquery-ui-draggable/].
